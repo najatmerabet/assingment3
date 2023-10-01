@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="angular.min.js"></script>
+  <script src="app.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body ng-app="NarrowItDownApp">
+  <div ng-controller="NarrowItDownController as list">
+    <input ng-model="list.itemsearch" type="text" placeholder="the item to seartch">
+    <button ng-click="list.search()">Narrow It Down For Me!</button>
+    <div ng-show="list.message">{{list.message}}</div>
+    <found-items found="list.found" on-remove="list.removeItem"></found-items>
+  </div>
+  
+</body>
+</html>
